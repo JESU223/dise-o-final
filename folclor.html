@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bailes Típicos de Colombia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            text-align: center;
+        }
+        .icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .icons i {
+            font-size: 24px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .menu-icon {
+            color: #ffcc00;
+        }
+        .home-icon {
+            color: #0033cc;
+        }
+        .search-icon {
+            color: #ff0000;
+        }
+        section {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .letter-yellow {
+            color: #ffcc00;
+            display: inline;
+        }
+        .letter-blue {
+            color: #0033cc;
+            display: inline;
+        }
+        .letter-red {
+            color: #ff0000;
+            display: inline;
+        }
+        h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 28px;
+        }
+        .baile-yellow {
+            color: #ffcc00;
+        }
+        .baile-blue {
+            color: #0033cc;
+        }
+        .baile-red {
+            color: #ff0000;
+        }
+        p {
+            font-family: 'Roboto Slab', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: #555;
+        }
+        .baile {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+            flex-basis: 45%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .baile img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-icons {
+            margin-bottom: 10px;
+        }
+        .social-icons i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .instagram-icon {
+            color: #ffcc00;
+        }
+        .facebook-icon {
+            color: #0033cc;
+        }
+        .twitter-icon {
+            color: #ff0000;
+        }
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: white;
+        }
+        .side-menu a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .side-menu a:hover {
+            color: #f1f1f1;
+        }
+        .side-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="icons">
+            <i class="fas fa-bars menu-icon" onclick="openMenu()"></i>
+            <i class="fas fa-home home-icon" onclick="goHome()"></i>
+            <i class="fas fa-search search-icon"></i>
+        </div>
+
+        <h1>
+            <span class="letter-yellow">B</span><span class="letter-yellow">a</span
+            ><span class="letter-blue">i</span><span class="letter-blue">l</span
+            ><span class="letter-red">e</span><span class="letter-red">s</span>
+            <span class="letter-yellow">T</span><span class="letter-yellow">í</span
+            ><span class="letter-blue">p</span><span class="letter-blue">i</span
+            ><span class="letter-red">c</span><span class="letter-red">o</span><span class="letter-yellow">s</span>
+            <span class="letter-blue">d</span><span class="letter-blue">e</span>
+            <span class="letter-red">C</span><span class="letter-yellow">o</span
+            ><span class="letter-yellow">l</span><span class="letter-blue">o</span
+            ><span class="letter-blue">m</span><span class="letter-red">b</span
+            ><span class="letter-red">i</span><span class="letter-yellow">a</span>
+        </h1>
+
+        <p>Descubre los principales bailes tradicionales de nuestro país</p>
+    </header>
+
+    <section>
+        <div class="baile">
+            <img src="a123.jpg" alt="Cumbia">
+            <div>
+                <h2 class="baile-yellow">Cumbia</h2>
+                <p>La Cumbia es uno de los bailes más representativos de la costa caribe colombiana, con raíces africanas, indígenas y españolas.</p>
+            </div>
+        </div>
+
+        <div class="baile">
+            <img src="https://th.bing.com/th/id/OIP.uyVsAjPHpOssjZZT-ssPngHaEo?rs=1&pid=ImgDetMain" alt="Joropo">
+            <div>
+                <h2 class="baile-blue">Joropo</h2>
+                <p>El Joropo es el baile típico de los Llanos Orientales, caracterizado por su zapateo y el uso del arpa, cuatro y maracas.</p>
+            </div>
+        </div>
+
+        <div class="baile">
+            <img src="https://hablemosdeculturas.com/wp-content/uploads/2017/12/Mapale-5.jpg" alt="Mapalé">
+            <div>
+                <h2 class="baile-red">Mapalé</h2>
+                <p>El Mapalé es una danza afrocolombiana de la costa pacífica, conocida por sus movimientos rápidos y enérgicos.</p>
+            </div>
+        </div>
+
+        <div class="baile">
+            <img src="https://radionacional-v3.s3.amazonaws.com/s3fs-public/node/article/field_image/Traje%201.jpg" alt="Bambuco">
+            <div>
+                <h2 class="baile-yellow">Bambuco</h2>
+                <p>El Bambuco es un baile típico de la región andina colombiana, con melodías suaves y ritmos de origen indígena.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <i class="fab fa-instagram instagram-icon"></i>
+            <i class="fab fa-facebook facebook-icon"></i>
+            <i class="fab fa-twitter twitter-icon"></i>
+        </div>
+        <p>&copy; Términos Legales. Copyright.</p>
+    </footer>
+
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="index.html">Inicio</a>
+        <a href="tradiciones.html">Tradiciones</a>
+        <a href="sabores.html">Sabores</a>
+        <a href="#">Folclor</a>
+        <a href="#">Contacto</a>
+    </div>
+
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu").style.width = "250px";
+        }
+        function closeMenu() {
+            document.getElementById("sideMenu").style.width = "0";
+        }
+        function goHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

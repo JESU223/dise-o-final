@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comidas Típicas Colombia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap');
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            text-align: center;
+        }
+        .icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .icons i {
+            font-size: 24px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .menu-icon {
+            color: #ffcc00;
+        }
+        .home-icon {
+            color: #0033cc;
+        }
+        .search-icon {
+            color: #ff0000;
+        }
+        h1 {
+            font-size: 36px;
+            font-family: 'Pacifico', cursive;
+        }
+        .letter-yellow {
+            color: #ffcc00;
+        }
+        .letter-blue {
+            color: #0033cc;
+        }
+        .letter-red {
+            color: #ff0000;
+        }
+        .content-section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .column-left, .column-right {
+            flex: 1;
+        }
+        .column-left {
+            max-width: 450px; /* Ancho de la columna izquierda */
+        }
+        .column-right {
+            max-width: 400px; /* Mantiene el ancho de la columna derecha */
+        }
+        .dish-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            padding: 15px;
+            align-items: center;
+            margin-bottom: 50px; /* Aumenta el espacio entre las tarjetas */
+            height: 200px; /* Aumenta la altura de las tarjetas de la izquierda */
+        }
+        .dish-card img {
+            width: 180px; /* Tamaño de las imágenes de las tarjetas de la izquierda */
+            height: 180px; /* Ajusta la altura de las imágenes de las tarjetas de la izquierda */
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+        .dish-card h2 {
+            font-size: 24px;
+            font-family: 'Pacifico', cursive;
+            margin: 0;
+        }
+        .sancocho h2 {
+            color: #ffcc00;
+        }
+        .bandeja h2 {
+            color: #ff0000;
+        }
+        .pescado h2 {
+            color: #0033cc;
+        }
+        .description {
+            font-size: 16px;
+            color: #333;
+        }
+        .text-container {
+            flex: 1;
+        }
+        /* Estilos específicos para la tarjeta de la derecha */
+        .pescado {
+            padding: 20px; /* Espacio en la tarjeta del pescado */
+            font-size: 20px; /* Texto de la descripción más grande */
+            flex-direction: column; /* Alinea la imagen y el texto en columna */
+            height: 700px; /* Aumenta la altura para mostrar la imagen completa */
+        }
+        .pescado img {
+            width: 100%; /* Ajusta el tamaño de la imagen del pescado */
+            height: 550px; /* Altura ajustada para la imagen del pescado */
+            border-radius: 10px;
+            margin-bottom: 10px; /* Separación entre la imagen y el texto */
+        }
+        .pescado h2 {
+            font-size: 32px; /* Título más grande para resaltar */
+            text-align: center; /* Centra el título sobre la imagen */
+            margin-bottom: 10px; /* Espacio entre el título y la imagen */
+        }
+        .pescado .description {
+            font-size: 22px; /* Descripción aún más grande */
+            text-align: center; /* Centra la descripción */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-icons i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .instagram-icon {
+            color: #ffcc00;
+        }
+        .facebook-icon {
+            color: #0033cc;
+        }
+        .twitter-icon {
+            color: #ff0000;
+        }
+        /* Estilo para el menú lateral */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: white;
+        }
+        .side-menu a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .side-menu a:hover {
+            color: #f1f1f1;
+        }
+        .side-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="icons">
+            <i class="fas fa-bars menu-icon" onclick="openMenu()"></i>
+            <i class="fas fa-home home-icon" onclick="goHome()"></i>
+            <i class="fas fa-search search-icon"></i>
+        </div>
+
+        <h1>
+            <span class="letter-yellow">Comidas Típicas</span><br>
+            <span class="letter-blue">Colom</span><span class="letter-red">bia</span>
+        </h1>
+    </header>
+
+    <section class="content-section">
+        <!-- Columna izquierda con dos platos -->
+        <div class="column-left">
+            <div class="dish-card sancocho">
+                <img src="sancocho.jpg" alt="Sancocho">
+                <div class="text-container">
+                    <h2>Sancocho</h2>
+                    <p class="description">El sancocho colombiano es una fiesta de sabores: ¡Un solo plato, el sabor de toda Colombia!</p>
+                </div>
+            </div>
+
+            <div class="dish-card bandeja">
+                <img src="bandejap.jpg" alt="Bandeja Paisa">
+                <div class="text-container">
+                    <h2>Bandeja Paisa</h2>
+                    <p class="description">La bandeja paisa es puro deleite: ¡Un bocado y te enamoras del sabor colombiano!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna derecha con un plato -->
+        <div class="column-right">
+            <div class="dish-card pescado">
+                <div class="text-container">
+                    <h2>Pescado</h2>
+                </div>
+                <img src="Pescadooo.jpg" alt="Pescado">
+                <div class="text-container">
+                    <p class="description">La bandeja costeña es un viaje directo al Caribe: Cada bocado es sol, mar y sabor tropical.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <i class="fab fa-instagram instagram-icon"></i>
+            <i class="fab fa-facebook facebook-icon"></i>
+            <i class="fab fa-twitter twitter-icon"></i>
+        </div>
+        <p>&copy; Términos legales y copyright.</p>
+    </footer>
+
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="index.html">Inicio</a>
+        <a href="tradiciones.html">Tradiciones</a>
+        <a href="sabores.html">Sabores</a>
+        <a href="folclor.html">Folclor</a>
+        <a href="#">Contacto</a>
+    </div>
+
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu").style.width = "250px";
+        }
+        function closeMenu() {
+            document.getElementById("sideMenu").style.width = "0";
+        }
+        function goHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
